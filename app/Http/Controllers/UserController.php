@@ -68,7 +68,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = new User();
+        $users = $user->getUser($id);
+        return response()->json($users);
     }
 
     /**

@@ -29,5 +29,9 @@ class User extends Authenticatable
     public function getUsers(){
         return $this->select('id','name','email','ativo')->get();
     }
+    public function getUser($id){
+        return $this->select('id','name','email','ativo')->where('id',$id)->first();
+
+    }
 }
 
